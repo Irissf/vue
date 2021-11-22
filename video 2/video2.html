@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video 1</title>
+</head>
+<body>
+    <!-- Todo lo que sea de vue lo encerramos en un container -->
+    <div id="app">
+        <h1>{{titulo}}</h1>
+        <!-- v-model te permite hacer una conexiónd irecta con tu input y tu javascript -->
+        <input type="text" v-model="nuevaFruta">
+        <!-- Podemos poner v-on:click="agregarFruta" -->
+        <button @click="agregarFruta">Agregar</button>
+        <ul>
+            <li v-for="fruta in frutasO"><strong>{{fruta.nombre}}</strong>, cantidad:{{fruta.cantidad}}
+                <span v-if="fruta.cantidad<=0"> - Sin stock</span>
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="/video 2/video2.js"></script> <!--Si lo ponemos antes del script de vue no funciona-->
+</body>
+</html>
